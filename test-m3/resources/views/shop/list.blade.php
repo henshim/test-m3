@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title', 'Shop list')
 @section('content')
-
+    <h2 style="text-align: center">Shop List</h2>
     <div>
         <a href="{{route('shop.add')}}" class="btn btn-success">Add Shop</a>
         <form action="{{ route('shop.search') }}" method="post" style="float: right">

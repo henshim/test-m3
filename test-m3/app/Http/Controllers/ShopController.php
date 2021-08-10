@@ -80,7 +80,8 @@ class ShopController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        Shop::query()->where('name', 'like', "%$search%");
-        return redirect()->route('shop.list');
+//        dd($search);
+        $shop=Shop::query()->where('shops.name', 'like', "$search%")->get();
+        return redirect()->route('shop.list',compact('shop'));
     }
 }
